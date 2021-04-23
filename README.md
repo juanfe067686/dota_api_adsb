@@ -14,7 +14,8 @@ a. https://api-dota-hero-match.herokuapp.com/
 
 b. https://api-dota-hero-match.herokuapp.com/{heroes_name}
 
-cth: 
+example: 
+
 https://api-dota-hero-match.herokuapp.com/axe
 
 https://api-dota-hero-match.herokuapp.com/bounty%20hunter
