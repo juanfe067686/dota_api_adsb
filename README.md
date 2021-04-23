@@ -7,8 +7,8 @@ The data got from the link below:
 2. https://api.opendota.com/api/scenarios/laneRoles
 If you want to try the API, you can open link in the below:
 Heroku URL	: 
-a.	https://api-dota-hero-match.herokuapp.com/
-b.	https://api-dota-hero-match.herokuapp.com/{heroes_name}
+a. https://api-dota-hero-match.herokuapp.com/
+b. https://api-dota-hero-match.herokuapp.com/{heroes_name}
 cth: https://api-dota-hero-match.herokuapp.com/axe
      https://api-dota-hero-match.herokuapp.com/bounty%20hunter
 Note=  
