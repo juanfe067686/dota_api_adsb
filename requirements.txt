@@ -1,6 +1,3 @@
 fastapi
 uvicorn
 requests
-pandas
-numpy
-optional
