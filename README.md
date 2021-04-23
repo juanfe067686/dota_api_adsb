@@ -14,11 +14,11 @@ a. https://api-dota-hero-match.herokuapp.com/
 
 b. https://api-dota-hero-match.herokuapp.com/{heroes_name}
 
-example: 
+Example: 
 
-https://api-dota-hero-match.herokuapp.com/axe
+1. https://api-dota-hero-match.herokuapp.com/axe
 
-https://api-dota-hero-match.herokuapp.com/bounty%20hunter
+2. https://api-dota-hero-match.herokuapp.com/bounty%20hunter
      
 Note=  
 -	Link a to find out the best hero order used in dota 2 based on win rate
