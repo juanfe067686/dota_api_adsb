@@ -1,1 +1,6 @@
-fastapi, uvicorn, requests, pandas, numpy, optional
+fastapi
+uvicorn
+requests
+pandas
+numpy
+optional
