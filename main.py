@@ -5,6 +5,7 @@ import requests
 import json
 import pandas as pd
 import numpy as np
+import os
 
 app = FastAPI()
 
@@ -71,4 +72,4 @@ def read_best():
 	
 	return ("Rank: \n"+rank.to_string())
 if __name__== "__main__":
-	uvicorn.run(app,host="0.0.0.0",port=5000, log_level="info")
+	uvicorn.run(app,host="0.0.0.0",port=int(os.environ.get('PORT',5000)), log_level="info")
