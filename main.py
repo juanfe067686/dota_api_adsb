@@ -47,7 +47,7 @@ def read_heroes(hero_name: str):
 	
 	lane = df_lane[df_lane['Hero_Id']==id_hero_dipilih['Id'].iloc[0]].groupby(['Lane_Category','Times_Category'])[['Win_Rate']].mean()
 	
-	return ("Heroes: "+id_hero_dipilih['Name'].iloc[0]+"\n"+lane.sort_values(by='Win_Rate', ascending=False).to_string())
+	return (lane.sort_values(by='Win_Rate', ascending=False).to_json(orient="index"))
 
 @app.get("/")#ranking hero terbaik berdasarkan win rate untuk digunakan dalam game
 def read_best():
@@ -70,6 +70,6 @@ def read_best():
 	rank = lane.sort_values(by='Win_Rate', ascending=False)
 	rank['Rank'] = list(range(1,len(lane.sort_values(by='Win_Rate', ascending=False).index)+1))
 	
-	return ("Rank: \n"+rank.to_string())
+	return (rank.to_json(orient="index"))
 if __name__== "__main__":
 	uvicorn.run(app,host="0.0.0.0",port=int(os.environ.get('PORT',5000)), log_level="info")
