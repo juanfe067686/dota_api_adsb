@@ -49,7 +49,7 @@ def read_heroes(hero_name: str):
 	
 	new_lane = pd.DataFrame()
 	for p in range(len(lane)):
-		new_lane = new_lane.append({'Lane_Category':lane[p]['Lane_Category'],'Times_Category':lane[p]['Times_Category'],'Win_Rate':lane[p]['Win_Rate']}, ignore_index=True)
+		new_lane = new_lane.append({'Lane_Category':lane['Lane_Category'].iloc[p],'Times_Category':lane['Times_Category'].iloc[p],'Win_Rate':lane.loc[p].value}, ignore_index=True)
 
 	results = new_lane.sort_values(by='Win_Rate', ascending=False).to_json(orient="index")
 	parsed = json.loads(results)						
