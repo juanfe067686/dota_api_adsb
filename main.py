@@ -46,7 +46,12 @@ def read_heroes(hero_name: str):
 	id_hero_dipilih = df_heroes[df_heroes['Name'].str.lower()==hero_name.lower()]
 	
 	lane = df_lane[df_lane['Hero_Id']==id_hero_dipilih['Id'].iloc[0]].groupby(['Lane_Category','Times_Category'])[['Win_Rate']].mean()
-	results = lane.sort_values(by='Win_Rate', ascending=False).to_json(orient="index")
+	
+	new_lane = pd.DataFrame()
+	for p in range(len(lane)):
+		new_lane = new_lane.append({'Lane_Category':lane[p][0],'Times_Category':lane[p][1],'Win_Rate':lane[p]["Win_Rate"]}, ignore_index=True)
+
+	results = new_lane.sort_values(by='Win_Rate', ascending=False).to_json(orient="index")
 	parsed = json.loads(results)						
 	return parsed
 
