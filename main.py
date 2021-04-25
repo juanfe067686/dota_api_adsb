@@ -75,6 +75,7 @@ def read_best():
 	df_lane['Win_Rate']=round(pd.to_numeric(df_lane['Win'])/pd.to_numeric(df_lane['Games'])*100,2)
 	df_gabungan = pd.merge(df_lane, df_heroes, on='Hero_Id', how='inner')
 	lane = df_gabungan.groupby('Name')[['Win_Rate']].mean()
+	lane = lane.reset_index()
 	rank = lane.sort_values(by='Win_Rate', ascending=False)
 	rank['Rank'] = list(range(1,len(lane.sort_values(by='Win_Rate', ascending=False).index)+1))
 	
